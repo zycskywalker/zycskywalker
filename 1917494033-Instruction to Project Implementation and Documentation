@@ -1,0 +1,58 @@
+#_author: FeiSir 
+#data: 2019/9/30 
+
+# using nested list 
+
+# shopping list 
+
+goods_list = [ 
+         ( 'the iPhone. 11 Pro', 9999), 
+         ( 'the iPhone. 11', 6299), 
+         ( 'Huawei bracelet', 399 ), 
+         ( 'Python Book', 85), 
+         ( 'Cup', 59), 
+         ( 'PEN',. 5) 
+         ] 
+salary_of_shopper = INPUT ( "Please the salary your INPUT:") 
+IF salary_of_shopper.isdigit (): 
+    money_shopper = int ( salary_of_shopper) 
+    in Flag = True 
+    buyed_list = [] 
+    the while in Flag: 
+        Print ( "may shopping list is:") 
+        # for I in Range (len (Goods)): 
+        # Print ( "% D,% S% D"% (I + 1, goods [i] [0 ],goods[i][1]))
+        for  i,j in enumerate(goods_list,1):
+            print(i,":",j)
+        index_choice = input('Please input the index of goods you want(or quit:Q):')
+        if index_choice.isdigit():
+            index_choice=int(index_choice)
+            if index_choice > 0 and index_choice< len(goods_list):
+                if goods_list[index_choice][1] > money_shopper:
+                    print("余额不足，￥%d" % (money_shopper - goods_list[index_choice][1]))
+                    # flag_continue = input('是否继续购物（Y/N）')
+                    # if flag_continue == "N":
+                    #     flag = False
+                else:
+                    buyed_list.append(goods_list[index_choice-1])
+                    money_shopper - = goods_list [index_choice-1] [1] 
+                    Print ( "% s has been added to your shopping cart, the balance of% d ¥"% (goods_list [index_choice-1] [0], money_shopper)) 
+                    # flag_continue the INPUT = ( 'whether to continue shopping (enter N to exit, and the rest any key to continue shopping)') 
+                    # iF flag_continue == "N": 
+                    # = False Flag 
+            the else: 
+                Print ( "number does not exist") 
+        elif index_choice == "Q": 
+            the_number_buyed len = (buyed_list) 
+            Print ( "----- you purchased commodities: ----------") 
+            # Print (buyed_list) 
+            for i, J in the enumerate (buyed_list, 1): 
+                Print ( I, ":", J) 
+            Print ( "" "
+            ----- Your balance:% d, welcome to the next purchase!
+            "" "% Money_shopper) 
+            BREAK 
+        the else: 
+            Print (" Illegal Input ") 
+the else: 
+    Print (" Illegal Input ")
